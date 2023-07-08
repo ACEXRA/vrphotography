@@ -1,0 +1,13 @@
+.logo {
+  width: 100px;
+  border-radius: 1rem;
+}
+.header {
+  background-color: #ffc916;
+}
+.navbar-expand-md .offcanvas .offcanvas-body {
+  justify-content: end;
+}
+.offcanvas {
+  background-color: #ffc916 !important;
+}
