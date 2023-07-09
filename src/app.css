@@ -62,3 +62,10 @@ ul {
   background-color: #ffc916 !important;
   margin: 1rem;
 }
+
+.carousel-control-next-icon {
+  background-image: url("./assets/Images/chevron-yellow.svg") !important;
+}
+.carousel-control-prev-icon {
+  background-image: url("./assets/Images/chevron-left-solid.svg") !important;
+}
