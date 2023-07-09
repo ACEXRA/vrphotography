@@ -22,18 +22,43 @@
 }
 ul {
   padding: 0 !important;
-  font-weight: 700;
   margin: 0 !important;
 }
-p {
-  font-weight: 700;
-  font-size: 1rem;
+.home {
+  display: flex;
+  overflow-x: auto;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700 !important;
+.home_image {
+  aspect-ratio: 16/9;
+  margin: 80px 0 0 0;
+  border-radius: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .home_image {
+    height: auto !important;
+  }
+}
+.about {
+  margin: 2rem 0 0 0;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  color: #ffc916;
+  margin: 2rem 0;
+}
+.profile_img {
+  aspect-ratio: 4/5;
+  border-radius: 1rem;
+}
+.font_theme1 {
+  color: #999999;
+}
+.sub_title {
+  color: #ffc916;
+  font-size: 2rem;
+}
+.card_style {
+  background-color: #ffc916 !important;
+  margin: 1rem;
 }

@@ -1,5 +1,5 @@
 //import react
-import React, { useState } from "react";
+import React from "react";
 //imports bootstrap
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -9,7 +9,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Logo from "../../assets/Images/logo.jpg";
 const Header = () => {
   return (
-    <Navbar expand="md" className="header" sticky="top">
+    <Navbar expand="md" className="header" fixed="top">
       <Container fluid>
         <Navbar.Brand>
           <img src={Logo} alt="temp" className="logo" />
