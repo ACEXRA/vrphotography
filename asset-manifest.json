@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/vtphotography/static/css/main.3406589e.css",
+    "main.js": "/vtphotography/static/js/main.656f8880.js",
+    "static/media/home_4.jpg": "/vtphotography/static/media/home_4.c5d176cab79114257f74.jpg",
+    "static/media/home_3.jpg": "/vtphotography/static/media/home_3.89c6b1626265570b8a4d.jpg",
+    "static/media/home_2.jpg": "/vtphotography/static/media/home_2.db9f40653fd34aa050a8.jpg",
+    "static/media/home_1.jpg": "/vtphotography/static/media/home_1.7c8a45292ab3dcb2c8f3.jpg",
+    "static/media/profile.jpg": "/vtphotography/static/media/profile.6b7613984a880729523e.jpg",
+    "static/media/wedding.jpeg": "/vtphotography/static/media/wedding.5fdf706ad4d5e70557c3.jpeg",
+    "static/media/zlabel.jpeg": "/vtphotography/static/media/zlabel.f2f73e4e8194f38ba6b1.jpeg",
+    "static/media/puberty.jpeg": "/vtphotography/static/media/puberty.ab786747e9a478a38132.jpeg",
+    "static/media/babyshoot.jpeg": "/vtphotography/static/media/babyshoot.c8a77b6cd3a34bfee232.jpeg",
+    "static/media/birthdayparty.jpeg": "/vtphotography/static/media/birthdayparty.c5ffac63d16cac8c6c71.jpeg",
+    "static/media/maternity.jpeg": "/vtphotography/static/media/maternity.6d2acbd5e201e76df060.jpeg",
+    "static/media/logo.jpg": "/vtphotography/static/media/logo.e5610376b474d633997a.jpg",
+    "index.html": "/vtphotography/index.html",
+    "static/media/phone-solid.svg": "/vtphotography/static/media/phone-solid.b4a074baa24a40414433c87293d74020.svg",
+    "static/media/envelope-solid.svg": "/vtphotography/static/media/envelope-solid.6345f82ededa4dc800949734956dc764.svg",
+    "static/media/chevron-yellow.svg": "/vtphotography/static/media/chevron-yellow.ceb3a47ad7c1413ab2019af7fe1f1b7d.svg",
+    "static/media/chevron-right-solid (1).svg": "/vtphotography/static/media/chevron-right-solid (1).2db3027901dcfeea0ac1af37c0fa2470.svg",
+    "static/media/location-dot-solid.svg": "/vtphotography/static/media/location-dot-solid.2e0ef750ef3975644482ba424ba65ae0.svg",
+    "main.3406589e.css.map": "/vtphotography/static/css/main.3406589e.css.map",
+    "main.656f8880.js.map": "/vtphotography/static/js/main.656f8880.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3406589e.css",
+    "static/js/main.656f8880.js"
+  ]
+}
