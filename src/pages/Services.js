@@ -10,7 +10,7 @@ import PubertyImg from "../assets/Images/puberty.jpeg";
 import Label from "../assets/Images/zlabel.jpeg";
 const Services = () => {
   return (
-    <>
+    <div id="services" className="content_begin">
       <Container fluid>
         <h4 className="title">Services</h4>
         <Row>
@@ -64,7 +64,7 @@ const Services = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 export default Services;

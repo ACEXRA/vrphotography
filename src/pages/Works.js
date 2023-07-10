@@ -41,42 +41,44 @@ const Works = () => {
   };
   const arr = [Work1, Work2, Work3, Work4, Work5, Work1, Work1, Work1];
   return (
-    <Container fluid>
-      <h4 className="title">My Works</h4>
-      <Carousel responsive={responsive} draggable={false}>
-        {arr.map((item) => {
-          return (
-            <div className="card_container">
-              <Card style={{ width: "18rem" }}>
-                <Card.Img
-                  variant="top"
-                  style={{ width: "286px", height: "429px" }}
-                  src={item}
-                  alt=""
-                />
-              </Card>
-            </div>
-          );
-        })}
-      </Carousel>
-      <Row style={{ justifyContent: "end" }}>
-        <img className="add_icon" src={Add} alt="" onClick={handleShow} />
-      </Row>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </Container>
+    <div id="works" className="content_begin">
+      <Container fluid>
+        <h4 className="title">My Works</h4>
+        <Carousel responsive={responsive} draggable={false}>
+          {arr.map((item) => {
+            return (
+              <div className="card_container">
+                <Card style={{ width: "18rem" }}>
+                  <Card.Img
+                    variant="top"
+                    style={{ width: "286px", height: "429px" }}
+                    src={item}
+                    alt=""
+                  />
+                </Card>
+              </div>
+            );
+          })}
+        </Carousel>
+        <Row style={{ justifyContent: "end" }}>
+          <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+        </Row>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Container>
+    </div>
   );
 };
 export default Works;

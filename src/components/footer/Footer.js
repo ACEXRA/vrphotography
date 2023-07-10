@@ -10,6 +10,12 @@ import email from "../../assets/Images/envelope-solid.svg";
 import chevron from "../../assets/Images/chevron-right-solid (1).svg";
 
 const Footer = () => {
+  const handleClickScroll = (props) => {
+    const element = document.getElementById(props);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <Container className="footer" fluid>
@@ -24,35 +30,57 @@ const Footer = () => {
           </Col>
           <Col>
             <h5>Main Menu</h5>
-            <ul>
-              <img className="icon" src={chevron} alt="ico" />
-              Home
-            </ul>
-            <ul>
-              <img className="icon" src={chevron} alt="ico" />
-              About
-            </ul>
-            <ul>
-              <img className="icon" src={chevron} alt="ico" />
-              Services
-            </ul>
-            <ul>
-              <img className="icon" src={chevron} alt="ico" />
-              Work
-            </ul>
-            {/* <ul>Blog</ul> */}
-            <ul>
-              <img className="icon" src={chevron} alt="ico" />
-              Happy Clients
-            </ul>
-            <ul>
-              <img className="icon" src={chevron} alt="ico" />
-              Updates
-            </ul>
-            <ul>
-              <img className="icon" src={chevron} alt="ico" />
-              Contact
-            </ul>
+            <div>
+              <ul
+                onClick={() => {
+                  handleClickScroll("home");
+                }}
+              >
+                <img className="icon" src={chevron} alt="ico" />
+                Home
+              </ul>
+              <ul
+                onClick={() => {
+                  handleClickScroll("about");
+                }}
+              >
+                <img className="icon" src={chevron} alt="ico" />
+                About
+              </ul>
+              <ul
+                onClick={() => {
+                  handleClickScroll("services");
+                }}
+              >
+                <img className="icon" src={chevron} alt="ico" />
+                Services
+              </ul>
+              <ul
+                onClick={() => {
+                  handleClickScroll("works");
+                }}
+              >
+                <img className="icon" src={chevron} alt="ico" />
+                Work
+              </ul>
+
+              <ul
+                onClick={() => {
+                  handleClickScroll("clients");
+                }}
+              >
+                <img className="icon" src={chevron} alt="ico" />
+                Happy Clients
+              </ul>
+              <ul
+                onClick={() => {
+                  handleClickScroll("updates");
+                }}
+              >
+                <img className="icon" src={chevron} alt="ico" />
+                Updates
+              </ul>
+            </div>
           </Col>
           <Col>
             <h5>Contact us</h5>

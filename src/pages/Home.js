@@ -10,20 +10,22 @@ import Home4 from "../assets/Images/home/home_4.jpg";
 
 const Home = () => {
   return (
-    <Carousel>
-      <Carousel.Item>
-        <Image className="home_image" src={Home1} fluid />
-      </Carousel.Item>
-      <Carousel.Item>
-        <Image className="home_image" src={Home2} fluid />
-      </Carousel.Item>
-      <Carousel.Item>
-        <Image className="home_image" src={Home3} fluid />
-      </Carousel.Item>
-      <Carousel.Item>
-        <Image className="home_image" src={Home4} fluid />
-      </Carousel.Item>
-    </Carousel>
+    <div id="home">
+      <Carousel>
+        <Carousel.Item>
+          <Image className="home_image" src={Home1} fluid />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image className="home_image" src={Home2} fluid />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image className="home_image" src={Home3} fluid />
+        </Carousel.Item>
+        <Carousel.Item>
+          <Image className="home_image" src={Home4} fluid />
+        </Carousel.Item>
+      </Carousel>
+    </div>
   );
 };
 export default Home;
