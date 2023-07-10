@@ -80,3 +80,7 @@ ul {
 .add_icon:hover {
   cursor: pointer;
 }
+.card_container {
+  display: flex;
+  justify-content: center;
+}

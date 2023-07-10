@@ -46,14 +46,16 @@ const Works = () => {
       <Carousel responsive={responsive} draggable={false}>
         {arr.map((item) => {
           return (
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                style={{ width: "286px", height: "429px" }}
-                src={item}
-                alt=""
-              />
-            </Card>
+            <div className="card_container">
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant="top"
+                  style={{ width: "286px", height: "429px" }}
+                  src={item}
+                  alt=""
+                />
+              </Card>
+            </div>
           );
         })}
       </Carousel>
