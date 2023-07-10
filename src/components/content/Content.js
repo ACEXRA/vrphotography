@@ -4,8 +4,9 @@ import React from "react";
 import Home from "../../pages/Home";
 import About from "../../pages/About";
 import Services from "../../pages/Services";
-import Updates from "../../pages/Updates";
 import Works from "../../pages/Works";
+import Clients from "../../pages/Clients";
+import Updates from "../../pages/Updates";
 
 const Content = () => {
   return (
@@ -14,6 +15,7 @@ const Content = () => {
       <About />
       <Services />
       <Works />
+      <Clients />
       <Updates />
     </>
   );

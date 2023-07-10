@@ -1,15 +1,13 @@
 //imports from react
 import React, { useState } from "react";
 //imports form bootstrap
-import { Row, Card, Container } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import { Row, Card, Container, Button, Modal } from "react-bootstrap";
 //imports
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Add from "../assets/Images/circle-plus-solid.svg";
 
-const Updates = () => {
+const Clients = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -40,7 +38,7 @@ const Updates = () => {
   const arr = ["1", "1", "21", "23", "213", "213", "123", "213"];
   return (
     <Container fluid>
-      <h4 className="title">Updates</h4>
+      <h4 className="title">Happy Clients</h4>
       <Carousel responsive={responsive} draggable={false}>
         {arr.map((item) => {
           return (
@@ -76,4 +74,4 @@ const Updates = () => {
     </Container>
   );
 };
-export default Updates;
+export default Clients;
