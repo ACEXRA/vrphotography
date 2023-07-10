@@ -69,3 +69,14 @@ ul {
 .carousel-control-prev-icon {
   background-image: url("./assets/Images/chevron-left-solid.svg") !important;
 }
+.react-multiple-carousel__arrow::before {
+  color: #ffc916 !important;
+}
+.add_icon {
+  margin: 2em !important;
+  height: 4em;
+  width: 4em !important;
+}
+.add_icon:hover {
+  cursor: pointer;
+}
