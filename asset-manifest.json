@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vtphotography/static/css/main.024867a8.css",
-    "main.js": "/vtphotography/static/js/main.c3a5f892.js",
+    "main.css": "/vtphotography/static/css/main.7a6dffb1.css",
+    "main.js": "/vtphotography/static/js/main.64df919a.js",
     "static/media/home_4.jpg": "/vtphotography/static/media/home_4.c5d176cab79114257f74.jpg",
     "static/media/home_3.jpg": "/vtphotography/static/media/home_3.89c6b1626265570b8a4d.jpg",
     "static/media/home_2.jpg": "/vtphotography/static/media/home_2.db9f40653fd34aa050a8.jpg",
@@ -30,11 +30,11 @@
     "static/media/chevron-left-solid.svg": "/vtphotography/static/media/chevron-left-solid.a4345451cf3db3932052.svg",
     "static/media/chevron-right-solid (1).svg": "/vtphotography/static/media/chevron-right-solid (1).2db3027901dcfeea0ac1af37c0fa2470.svg",
     "static/media/location-dot-solid.svg": "/vtphotography/static/media/location-dot-solid.2e0ef750ef3975644482ba424ba65ae0.svg",
-    "main.024867a8.css.map": "/vtphotography/static/css/main.024867a8.css.map",
-    "main.c3a5f892.js.map": "/vtphotography/static/js/main.c3a5f892.js.map"
+    "main.7a6dffb1.css.map": "/vtphotography/static/css/main.7a6dffb1.css.map",
+    "main.64df919a.js.map": "/vtphotography/static/js/main.64df919a.js.map"
   },
   "entrypoints": [
-    "static/css/main.024867a8.css",
-    "static/js/main.c3a5f892.js"
+    "static/css/main.7a6dffb1.css",
+    "static/js/main.64df919a.js"
   ]
 }
