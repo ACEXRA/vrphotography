@@ -1,11 +1,16 @@
 {
   "files": {
-    "main.css": "/vtphotography/static/css/main.3406589e.css",
-    "main.js": "/vtphotography/static/js/main.656f8880.js",
+    "main.css": "/vtphotography/static/css/main.024867a8.css",
+    "main.js": "/vtphotography/static/js/main.c3a5f892.js",
     "static/media/home_4.jpg": "/vtphotography/static/media/home_4.c5d176cab79114257f74.jpg",
     "static/media/home_3.jpg": "/vtphotography/static/media/home_3.89c6b1626265570b8a4d.jpg",
     "static/media/home_2.jpg": "/vtphotography/static/media/home_2.db9f40653fd34aa050a8.jpg",
     "static/media/home_1.jpg": "/vtphotography/static/media/home_1.7c8a45292ab3dcb2c8f3.jpg",
+    "static/media/work4.jpg": "/vtphotography/static/media/work4.dbed3e2a68305e27de61.jpg",
+    "static/media/work1.jpg": "/vtphotography/static/media/work1.36466f9461bdb0617e6e.jpg",
+    "static/media/work2.jpg": "/vtphotography/static/media/work2.e237ee4dd7a8df2f00c3.jpg",
+    "static/media/work3.jpg": "/vtphotography/static/media/work3.172769393a276fb44726.jpg",
+    "static/media/work5.jpg": "/vtphotography/static/media/work5.d087a60d01acaf924e1e.jpg",
     "static/media/profile.jpg": "/vtphotography/static/media/profile.6b7613984a880729523e.jpg",
     "static/media/wedding.jpeg": "/vtphotography/static/media/wedding.5fdf706ad4d5e70557c3.jpeg",
     "static/media/zlabel.jpeg": "/vtphotography/static/media/zlabel.f2f73e4e8194f38ba6b1.jpeg",
@@ -14,17 +19,22 @@
     "static/media/birthdayparty.jpeg": "/vtphotography/static/media/birthdayparty.c5ffac63d16cac8c6c71.jpeg",
     "static/media/maternity.jpeg": "/vtphotography/static/media/maternity.6d2acbd5e201e76df060.jpeg",
     "static/media/logo.jpg": "/vtphotography/static/media/logo.e5610376b474d633997a.jpg",
+    "static/media/revicons.eot": "/vtphotography/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/vtphotography/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/vtphotography/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/vtphotography/index.html",
     "static/media/phone-solid.svg": "/vtphotography/static/media/phone-solid.b4a074baa24a40414433c87293d74020.svg",
     "static/media/envelope-solid.svg": "/vtphotography/static/media/envelope-solid.6345f82ededa4dc800949734956dc764.svg",
+    "static/media/circle-plus-solid.svg": "/vtphotography/static/media/circle-plus-solid.c2e35eab0882e669b67ca81e59233496.svg",
     "static/media/chevron-yellow.svg": "/vtphotography/static/media/chevron-yellow.ceb3a47ad7c1413ab2019af7fe1f1b7d.svg",
+    "static/media/chevron-left-solid.svg": "/vtphotography/static/media/chevron-left-solid.a4345451cf3db3932052.svg",
     "static/media/chevron-right-solid (1).svg": "/vtphotography/static/media/chevron-right-solid (1).2db3027901dcfeea0ac1af37c0fa2470.svg",
     "static/media/location-dot-solid.svg": "/vtphotography/static/media/location-dot-solid.2e0ef750ef3975644482ba424ba65ae0.svg",
-    "main.3406589e.css.map": "/vtphotography/static/css/main.3406589e.css.map",
-    "main.656f8880.js.map": "/vtphotography/static/js/main.656f8880.js.map"
+    "main.024867a8.css.map": "/vtphotography/static/css/main.024867a8.css.map",
+    "main.c3a5f892.js.map": "/vtphotography/static/js/main.c3a5f892.js.map"
   },
   "entrypoints": [
-    "static/css/main.3406589e.css",
-    "static/js/main.656f8880.js"
+    "static/css/main.024867a8.css",
+    "static/js/main.c3a5f892.js"
   ]
 }
