@@ -11,10 +11,10 @@ import Updates from "../../pages/Updates";
 const Content = () => {
   return (
     <>
-      <Home />
-      <About />
-      <Services />
-      <Works />
+      {/* <Home /> */}
+      {/* <About /> */}
+      {/* <Services /> */}
+      {/* <Works /> */}
       <Clients />
       <Updates />
     </>

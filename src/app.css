@@ -87,3 +87,17 @@ ul {
   display: flex;
   justify-content: center;
 }
+/* bootstrap button class */
+.btn {
+  background-color: #000000 !important;
+  color: #ffc916 !important;
+  border: none !important;
+}
+/* bootstrap modal css */
+.modal-content {
+  background-color: #ffc916 !important;
+}
+.modal-header,
+.modal-footer {
+  border: none !important;
+}

@@ -40,7 +40,7 @@ const About = () => {
               <span className="sub_title">My Equipment</span>
             </Row>
             <Row>
-              <ul style={{ "list-style-type": "none" }}>
+              <ul style={{ listStyleType: "none" }}>
                 <li className="font_theme1">
                   <img className="icon" src={arrow} alt="ico" />
                   Canon Eos 5D Mark IV 24-105mm

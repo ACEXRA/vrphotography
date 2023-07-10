@@ -5,11 +5,19 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Form, Col, InputGroup, Row } from "react-bootstrap";
 //import assets
 import Logo from "../../assets/Images/logo.jpg";
 import User from "../../assets/Images/user-solid.svg";
+//firbase
+import { Auth, auth } from "../config/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 const Header = () => {
+  //sign in
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  //modal
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -20,6 +28,24 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log(username);
+    console.log(password);
+    signInWithEmailAndPassword(auth, username, password)
+      .then((user) => {
+        if (user.uid) {
+          console.log("success");
+          setShow(false);
+        } else {
+          console.log("wrong");
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
   return (
     <Navbar expand="md" className="header" fixed="top">
@@ -99,17 +125,37 @@ const Header = () => {
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Admin Login</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        <Modal.Body>
+          <Form onSubmit={submitHandler}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                required
+                type="email"
+                placeholder="Enter email"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                required
+                type="password"
+                placeholder="Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Modal.Body>
       </Modal>
     </Navbar>
   );
