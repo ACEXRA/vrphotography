@@ -1,5 +1,5 @@
 //imports from react
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //imports form bootstrap
 import { Row, Card, Container } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
@@ -8,8 +8,11 @@ import Button from "react-bootstrap/Button";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Add from "../assets/Images/circle-plus-solid.svg";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../components/config/firebase";
 
 const Updates = () => {
+  const [updatesList, setUpdatesList] = useState([]);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -37,22 +40,42 @@ const Updates = () => {
       items: 1,
     },
   };
-  const arr = ["1", "1", "21", "23", "213", "213", "123", "213"];
+  // const arr = ["1", "1", "21", "23", "213", "213", "123", "213"];
+
+  //getUpdates from db
+  useEffect(() => {
+    const getUpdates = async () => {
+      try {
+        const data = await getDocs(collection(db, "updates"));
+        const filteredData = data.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setUpdatesList(filteredData);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    getUpdates();
+  }, []);
   return (
     <div id="updates" className="content_begin">
       <Container fluid>
         <h4 className="title">Updates</h4>
         <Carousel responsive={responsive} draggable={false}>
-          {arr.map((item) => {
+          {updatesList.map((item) => {
             return (
-              <div className="card_container">
-                <Card style={{ width: "18rem" }}>
+              <div key={item.id} className="card_container">
+                <Card
+                  style={{
+                    width: "20em",
+                    height: "25em",
+                    background: "#ffc916",
+                  }}
+                >
                   <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
+                    <Card.Title>{item.title}</Card.Title>
+                    <Card.Text>{item.description}</Card.Text>
                   </Card.Body>
                 </Card>
               </div>

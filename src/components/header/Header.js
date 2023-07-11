@@ -5,12 +5,12 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Modal, Button, Form, Col, InputGroup, Row } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
 //import assets
 import Logo from "../../assets/Images/logo.jpg";
 import User from "../../assets/Images/user-solid.svg";
 //firbase
-import { Auth, auth } from "../config/firebase";
+import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 const Header = () => {
   //sign in
