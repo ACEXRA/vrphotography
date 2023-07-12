@@ -101,3 +101,12 @@ ul {
 .modal-footer {
   border: none !important;
 }
+
+.icon_click {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}

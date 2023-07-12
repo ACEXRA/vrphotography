@@ -58,6 +58,11 @@ const Updates = () => {
     };
     getUpdates();
   }, []);
+
+  //putUpdate to db
+  const submitHandler = () => {
+    setShow(false);
+  };
   return (
     <div id="updates" className="content_begin">
       <Container fluid>
@@ -109,7 +114,7 @@ const Updates = () => {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={submitHandler}>
               submit
             </Button>
           </Modal.Footer>

@@ -62,7 +62,7 @@ const Header = () => {
             {/* <Offcanvas.Title>Responsive offcanvas</Offcanvas.Title> */}
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav style={{ alignItems: "center" }}>
+            <Nav>
               <Nav.Link
                 href="#Home"
                 onClick={() => {

@@ -39,7 +39,8 @@ const Works = () => {
       items: 1,
     },
   };
-  const arr = [Work1, Work2, Work3, Work4, Work5, Work1, Work1, Work1];
+  // const arr = [Work1, Work2, Work3, Work4, Work5, Work1, Work1, Work1];
+  const arr = [1, 2];
   return (
     <div id="works" className="content_begin">
       <Container fluid>
