@@ -1,5 +1,5 @@
 //imports from react
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 //imports form bootstrap
 import {
   Row,
@@ -27,13 +27,10 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import ClientsEditModal from "../components/ui/ClientsEditModal";
+import CustomToast from "../components/ui/CustomToast";
 
 const Clients = () => {
-  const [show, setShow] = useState(false);
-  const [clientsList, setClientsList] = useState([]);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  //multiple carousal
   const responsive = {
     desktop: {
       breakpoint: {
@@ -57,6 +54,17 @@ const Clients = () => {
       items: 1,
     },
   };
+  //data
+  const [clientsList, setClientsList] = useState([]);
+  //Toast
+  const [toast, setToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  //edit modal
+  const editModalRef = useRef();
+  //modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   //getList from db
   const getClient = async () => {
@@ -76,7 +84,6 @@ const Clients = () => {
   }, []);
 
   //putClients
-
   const [event, setEvent] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState(0);
@@ -87,6 +94,8 @@ const Clients = () => {
         description: description,
         rating: Number(rating),
       });
+      setToast(true);
+      setToastMessage("Client Added");
       getClient();
     } catch (err) {
       console.log(err.message);
@@ -98,27 +107,41 @@ const Clients = () => {
   const deleteHandler = async (id) => {
     try {
       await deleteDoc(doc(db, "clients", id));
+      setToast(true);
+      setToastMessage("Client Deleted");
       getClient();
     } catch (err) {
       console.log(err.message);
     }
   };
 
-  //update clients and edit modal handler
+  // edit modal handler
   const [editShow, setEditShow] = useState(false);
-  const editHandleShow = () => setEditShow(true);
-  const editHandleClose = () => setEditShow(false);
-  const editHandler = () => {
-    setEditShow(true);
+  const editHandleClose = () => {
+    setEditShow(false);
   };
-  // const editHandler = async() => {
-  //   try {
-  //    await updateDoc(doc(db, "clients", item.id, {}));
-  //   getClient();
-  //   } catch (err) {
-  //     console.log(err.message);
-  //   }
-  // };
+  const editHandler = (e) => {
+    setEditShow(true);
+    editModalRef.current.editHandler(e);
+  };
+  //update clients
+  const updateHandler = async (e) => {
+    console.log(e);
+    const updateReference = doc(db, "clients", e.id);
+    try {
+      await updateDoc(updateReference, {
+        event: e.event,
+        description: e.description,
+        rating: Number(e.rating),
+      });
+      setEditShow(false);
+      setToast(true);
+      setToastMessage("Client Updated");
+      getClient();
+    } catch (err) {
+      console.log(err.message, " Update error");
+    }
+  };
 
   return (
     <div id="clients" className="content_begin">
@@ -149,7 +172,7 @@ const Clients = () => {
                             src={Edit}
                             className="icon_click"
                             alt="editico"
-                            onClick={editHandler}
+                            onClick={() => editHandler(item)}
                           />
                           <img
                             src={Delete}
@@ -181,6 +204,7 @@ const Clients = () => {
                   type="text"
                   placeholder="event"
                   onChange={(e) => setEvent(e?.target?.value)}
+                  required
                 />
               </Form.Group>
               <Form.Group
@@ -194,6 +218,7 @@ const Clients = () => {
                   maxLength={150}
                   placeholder="description"
                   onChange={(e) => setDescription(e?.target?.value)}
+                  required
                 />
                 <Form.Text className="text-muted">Max 200 characters</Form.Text>
               </Form.Group>
@@ -201,6 +226,7 @@ const Clients = () => {
               <Form.Select
                 aria-label="Default select example"
                 onChange={(e) => setRating(Number(e?.target?.value))}
+                required
               >
                 <option>Rating</option>
                 <option value="1">1</option>
@@ -222,11 +248,12 @@ const Clients = () => {
         </Modal>
         <ClientsEditModal
           show={editShow}
-          setShow={setEditShow}
-          handleShow={editHandleShow}
           handleClose={editHandleClose}
+          ref={editModalRef}
+          submitHandler={updateHandler}
         />
       </Container>
+      <CustomToast setShow={setToast} show={toast} message={toastMessage} />
     </div>
   );
 };
