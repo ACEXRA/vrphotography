@@ -1,5 +1,5 @@
 import React from "react";
-import { Toast, ToastContainer, Row, Col } from "react-bootstrap";
+import { Toast, ToastContainer } from "react-bootstrap";
 
 const CustomToast = ({ message, setShow, show }) => {
   return (

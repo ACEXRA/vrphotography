@@ -8,11 +8,11 @@ import Button from "react-bootstrap/Button";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Add from "../assets/Images/circle-plus-solid.svg";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../components/config/firebase";
+import { storage } from "../components/config/firebase";
+import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
+import CustomToast from "../components/ui/CustomToast";
 
 const Updates = () => {
-  const [updatesList, setUpdatesList] = useState([]);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -40,48 +40,63 @@ const Updates = () => {
       items: 1,
     },
   };
-  // const arr = ["1", "1", "21", "23", "213", "213", "123", "213"];
 
-  //getUpdates from db
+  const [updatesImage, setUpdatesImage] = useState([]);
+  const imageFetchHandler = () => {
+    const imageListRef = ref(storage, "/Updates");
+    listAll(imageListRef).then((res) => {
+      res.items.forEach((item) => {
+        getDownloadURL(item).then((url) => {
+          setUpdatesImage((prev) => [...prev, url]);
+        });
+      });
+    });
+  };
+  //getUpdates
   useEffect(() => {
-    const getUpdates = async () => {
+    setUpdatesImage([]);
+    imageFetchHandler();
+  }, []);
+
+  //upload update
+  const [uploadImage, setUploadImage] = useState(null);
+  const submitHandler = async () => {
+    handleClose();
+    if (!uploadImage) return;
+    if (uploadImage.size > 1000000) {
+      console.log("file big to upload");
+    } else {
       try {
-        const data = await getDocs(collection(db, "updates"));
-        const filteredData = data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        setUpdatesList(filteredData);
+        const imageRef = ref(storage, `Updates/${uploadImage.name}`);
+        await uploadBytes(imageRef, uploadImage);
+        setUpdatesImage([]);
+        imageFetchHandler();
+        setMessage("image uploaded");
+        setToast(true);
       } catch (err) {
         console.log(err.message);
       }
-    };
-    getUpdates();
-  }, []);
-
-  //putUpdate to db
-  const submitHandler = () => {
-    setShow(false);
+    }
   };
+
+  //Toast
+  const [message, setMessage] = useState("");
+  const [toast, setToast] = useState(false);
   return (
     <div id="updates" className="content_begin">
       <Container fluid>
         <h4 className="title">Updates</h4>
         <Carousel responsive={responsive} draggable={false}>
-          {updatesList.map((item) => {
+          {updatesImage.map((item) => {
             return (
-              <div key={item.id} className="card_container">
-                <Card
-                  style={{
-                    width: "20em",
-                    height: "25em",
-                    background: "#ffc916",
-                  }}
-                >
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    <Card.Text>{item.description}</Card.Text>
-                  </Card.Body>
+              <div key={item} className="card_container">
+                <Card style={{ width: "18rem" }}>
+                  <Card.Img
+                    variant="top"
+                    style={{ width: "286px", height: "429px" }}
+                    src={item}
+                    alt=""
+                  />
                 </Card>
               </div>
             );
@@ -95,20 +110,16 @@ const Updates = () => {
             <Modal.Title>Updates</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
-              <Form.Group className="mb-3">
-                <Form.Label>Title</Form.Label>
-                <Form.Control type="text" placeholder="title" />
-              </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-              >
-                <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" rows={3} maxLength={150} />
-                <Form.Text className="text-muted">Max 200 characters</Form.Text>
-              </Form.Group>
-            </Form>
+            <Form.Group controlId="formFile" className="mb-3">
+              <Form.Label>Upload an image</Form.Label>
+              <Form.Control
+                type="file"
+                onChange={(e) => setUploadImage(e.target.files[0])}
+              />
+              <Form.Text className="text-muted">
+                File should be less than 1mb
+              </Form.Text>
+            </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
@@ -119,6 +130,7 @@ const Updates = () => {
             </Button>
           </Modal.Footer>
         </Modal>
+        <CustomToast show={toast} setShow={setToast} message={message} />
       </Container>
     </div>
   );
