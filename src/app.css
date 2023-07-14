@@ -4,6 +4,9 @@
 .logo {
   width: 100px;
   border-radius: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .header {
   background-color: #ffc916;
@@ -17,6 +20,9 @@
 .footer {
   background-color: #ffc916;
   padding: 2rem 5rem !important;
+}
+.footer_menu:hover {
+  cursor: pointer;
 }
 .icon {
   width: 1rem;

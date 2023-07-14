@@ -8,10 +8,10 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { Modal, Button, Form } from "react-bootstrap";
 //import assets
 import Logo from "../../assets/Images/logo.jpg";
-import User from "../../assets/Images/user-solid.svg";
+import CustomToast from "../ui/CustomToast";
 //firbase
 import { auth } from "../config/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 const Header = () => {
   //sign in
   const [username, setUsername] = useState("");
@@ -30,15 +30,16 @@ const Header = () => {
     }
   };
 
+  //authetication for login
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(username);
-    console.log(password);
     signInWithEmailAndPassword(auth, username, password)
       .then((user) => {
-        if (user.uid) {
-          console.log("success");
+        if (user.user.uid) {
           setShow(false);
+          setToast(true);
+          setMessage("User Logged");
+          window.location.reload(false);
         } else {
           console.log("wrong");
         }
@@ -47,11 +48,26 @@ const Header = () => {
         console.log(err.message);
       });
   };
+  //logout
+  const logoutHandler = async () => {
+    try {
+      setShow(false);
+      await signOut(auth);
+      setToast(true);
+      setMessage("Logged Out");
+      window.location.reload(false);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+  //Toast
+  const [message, setMessage] = useState("");
+  const [toast, setToast] = useState(false);
   return (
     <Navbar expand="md" className="header" fixed="top">
       <Container fluid>
         <Navbar.Brand>
-          <img src={Logo} alt="temp" className="logo" />
+          <img src={Logo} alt="temp" className="logo" onClick={handleShow} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
         <Navbar.Offcanvas
@@ -111,14 +127,14 @@ const Header = () => {
               >
                 <b>Updates</b>
               </Nav.Link>
-              <Nav.Link>
+              {/* <Nav.Link>
                 <img
                   src={User}
                   className="icon"
                   alt="user"
                   onClick={handleShow}
                 />
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
@@ -128,35 +144,40 @@ const Header = () => {
           <Modal.Title>Admin Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={submitHandler}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                required
-                type="email"
-                placeholder="Enter email"
-                onChange={(e) => {
-                  setUsername(e.target.value);
-                }}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                required
-                type="password"
-                placeholder="Password"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
+          {auth.currentUser ? (
+            <Button onClick={logoutHandler}>Sign out</Button>
+          ) : (
+            <Form onSubmit={submitHandler}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  required
+                  type="email"
+                  placeholder="Enter email"
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                  }}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  required
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+          )}
         </Modal.Body>
       </Modal>
+      <CustomToast show={toast} setShow={setToast} message={message} />
     </Navbar>
   );
 };

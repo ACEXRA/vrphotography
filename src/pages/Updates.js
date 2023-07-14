@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Add from "../assets/Images/circle-plus-solid.svg";
-import { storage } from "../components/config/firebase";
+import { storage, auth } from "../components/config/firebase";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import CustomToast from "../components/ui/CustomToast";
 
@@ -41,6 +41,7 @@ const Updates = () => {
     },
   };
 
+  //getUpdates
   const [updatesImage, setUpdatesImage] = useState([]);
   const imageFetchHandler = () => {
     const imageListRef = ref(storage, "/Updates");
@@ -52,7 +53,6 @@ const Updates = () => {
       });
     });
   };
-  //getUpdates
   useEffect(() => {
     setUpdatesImage([]);
     imageFetchHandler();
@@ -82,6 +82,7 @@ const Updates = () => {
   //Toast
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState(false);
+
   return (
     <div id="updates" className="content_begin">
       <Container fluid>
@@ -103,7 +104,11 @@ const Updates = () => {
           })}
         </Carousel>
         <Row style={{ justifyContent: "end" }}>
-          <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+          {auth.currentUser ? (
+            <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+          ) : (
+            <div style={{ height: "2em" }}></div>
+          )}
         </Row>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>

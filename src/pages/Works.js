@@ -6,7 +6,7 @@ import { Row, Card, Container, Button, Modal, Form } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Add from "../assets/Images/circle-plus-solid.svg";
-import { storage } from "../components/config/firebase";
+import { auth, storage } from "../components/config/firebase";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import CustomToast from "../components/ui/CustomToast";
 // import Work1 from "../assets/Images/works/work1.jpg";
@@ -103,7 +103,11 @@ const Works = () => {
           })}
         </Carousel>
         <Row style={{ justifyContent: "end" }}>
-          <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+          {auth.currentUser ? (
+            <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+          ) : (
+            <div style={{ height: "2em" }}></div>
+          )}
         </Row>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>

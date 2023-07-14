@@ -37,7 +37,7 @@ const Footer = () => {
                 }}
               >
                 <img className="icon" src={chevron} alt="ico" />
-                Home
+                <span className="footer_menu">Home</span>
               </ul>
               <ul
                 onClick={() => {
@@ -45,7 +45,7 @@ const Footer = () => {
                 }}
               >
                 <img className="icon" src={chevron} alt="ico" />
-                About
+                <span className="footer_menu">About</span>
               </ul>
               <ul
                 onClick={() => {
@@ -53,7 +53,7 @@ const Footer = () => {
                 }}
               >
                 <img className="icon" src={chevron} alt="ico" />
-                Services
+                <span className="footer_menu">Services</span>
               </ul>
               <ul
                 onClick={() => {
@@ -61,7 +61,7 @@ const Footer = () => {
                 }}
               >
                 <img className="icon" src={chevron} alt="ico" />
-                Work
+                <span className="footer_menu">Work</span>
               </ul>
 
               <ul
@@ -70,7 +70,7 @@ const Footer = () => {
                 }}
               >
                 <img className="icon" src={chevron} alt="ico" />
-                Happy Clients
+                <span className="footer_menu">Happy Clients</span>
               </ul>
               <ul
                 onClick={() => {
@@ -78,7 +78,7 @@ const Footer = () => {
                 }}
               >
                 <img className="icon" src={chevron} alt="ico" />
-                Updates
+                <span className="footer_menu">Updates</span>
               </ul>
             </div>
           </Col>

@@ -17,7 +17,7 @@ import Add from "../assets/Images/circle-plus-solid.svg";
 import Edit from "../assets/Images/pen-to-square-solid.svg";
 import Delete from "../assets/Images/trash-solid.svg";
 //import firebase
-import { db } from "../components/config/firebase";
+import { auth, db } from "../components/config/firebase";
 import {
   getDocs,
   collection,
@@ -190,7 +190,11 @@ const Clients = () => {
           })}
         </Carousel>
         <Row style={{ justifyContent: "end" }}>
-          <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+          {auth.currentUser ? (
+            <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+          ) : (
+            <div style={{ height: "2em" }}></div>
+          )}
         </Row>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
