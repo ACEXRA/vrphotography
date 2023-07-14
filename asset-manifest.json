@@ -1,13 +1,8 @@
 {
   "files": {
     "main.css": "/vrphotography/static/css/main.cc0d1e8c.css",
-    "main.js": "/vrphotography/static/js/main.b5ac3fd5.js",
-    "static/media/work4.jpg": "/vrphotography/static/media/work4.dbed3e2a68305e27de61.jpg",
-    "static/media/work1.jpg": "/vrphotography/static/media/work1.36466f9461bdb0617e6e.jpg",
-    "static/media/work2.jpg": "/vrphotography/static/media/work2.e237ee4dd7a8df2f00c3.jpg",
-    "static/media/work3.jpg": "/vrphotography/static/media/work3.172769393a276fb44726.jpg",
+    "main.js": "/vrphotography/static/js/main.5985f9fc.js",
     "static/media/home_4.jpg": "/vrphotography/static/media/home_4.3b3aed088c28efb8ff32.jpg",
-    "static/media/work5.jpg": "/vrphotography/static/media/work5.d087a60d01acaf924e1e.jpg",
     "static/media/profile.jpg": "/vrphotography/static/media/profile.6b7613984a880729523e.jpg",
     "static/media/home_3.jpg": "/vrphotography/static/media/home_3.1470ef7908936dbdb083.jpg",
     "static/media/home_2.jpg": "/vrphotography/static/media/home_2.e995083db87a664a8bbd.jpg",
@@ -34,10 +29,10 @@
     "static/media/chevron-right-solid (1).svg": "/vrphotography/static/media/chevron-right-solid (1).2db3027901dcfeea0ac1af37c0fa2470.svg",
     "static/media/location-dot-solid.svg": "/vrphotography/static/media/location-dot-solid.2e0ef750ef3975644482ba424ba65ae0.svg",
     "main.cc0d1e8c.css.map": "/vrphotography/static/css/main.cc0d1e8c.css.map",
-    "main.b5ac3fd5.js.map": "/vrphotography/static/js/main.b5ac3fd5.js.map"
+    "main.5985f9fc.js.map": "/vrphotography/static/js/main.5985f9fc.js.map"
   },
   "entrypoints": [
     "static/css/main.cc0d1e8c.css",
-    "static/js/main.b5ac3fd5.js"
+    "static/js/main.5985f9fc.js"
   ]
 }
