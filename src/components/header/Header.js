@@ -63,6 +63,10 @@ const Header = () => {
   //Toast
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState(false);
+
+  const handler = () => {
+    console.log("lcick");
+  };
   return (
     <Navbar expand="md" className="header" fixed="top" collapseOnSelect>
       <Container fluid>
@@ -70,64 +74,57 @@ const Header = () => {
           <img src={Logo} alt="temp" className="logo" onClick={handleShow} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
-        <Navbar.Offcanvas
-          aria-labelledby={`offcanvasNavbarLabel-expand-md`}
-          placement="end"
-        >
-          <Offcanvas.Header closeButton>
-            {/* <Offcanvas.Title>Responsive offcanvas</Offcanvas.Title> */}
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav>
-              <Nav.Link
-                href="#Home"
-                onClick={() => {
-                  handleClickScroll("home");
-                }}
-              >
-                <b>Home</b>
-              </Nav.Link>
-              <Nav.Link
-                href="#About"
-                onClick={() => {
-                  handleClickScroll("about");
-                }}
-              >
-                <b>About</b>
-              </Nav.Link>
-              <Nav.Link
-                href="#Services"
-                onClick={() => {
-                  handleClickScroll("services");
-                }}
-              >
-                <b>Services</b>
-              </Nav.Link>
-              <Nav.Link
-                href="#Work"
-                onClick={() => {
-                  handleClickScroll("works");
-                }}
-              >
-                <b>Work</b>
-              </Nav.Link>
-              <Nav.Link
-                href="#Clients"
-                onClick={() => {
-                  handleClickScroll("clients");
-                }}
-              >
-                <b>Happy Clients</b>
-              </Nav.Link>
-              <Nav.Link
-                href="#Updates"
-                onClick={() => {
-                  handleClickScroll("updates");
-                }}
-              >
-                <b>Updates</b>
-              </Nav.Link>
-              {/* <Nav.Link>
+        <Navbar.Collapse>
+          <Nav>
+            <Nav.Link
+              href="#Home"
+              onClick={() => {
+                handleClickScroll("home");
+              }}
+            >
+              <b>Home</b>
+            </Nav.Link>
+            <Nav.Link
+              href="#About"
+              onClick={() => {
+                handleClickScroll("about");
+              }}
+            >
+              <b>About</b>
+            </Nav.Link>
+            <Nav.Link
+              href="#Services"
+              onClick={() => {
+                handleClickScroll("services");
+              }}
+            >
+              <b>Services</b>
+            </Nav.Link>
+            <Nav.Link
+              href="#Work"
+              onClick={() => {
+                handleClickScroll("works");
+              }}
+            >
+              <b>Work</b>
+            </Nav.Link>
+            <Nav.Link
+              href="#Clients"
+              onClick={() => {
+                handleClickScroll("clients");
+              }}
+            >
+              <b>Happy Clients</b>
+            </Nav.Link>
+            <Nav.Link
+              href="#Updates"
+              onClick={() => {
+                handleClickScroll("updates");
+              }}
+            >
+              <b>Updates</b>
+            </Nav.Link>
+            {/* <Nav.Link>
                 <img
                   src={User}
                   className="icon"
@@ -135,9 +132,8 @@ const Header = () => {
                   onClick={handleShow}
                 />
               </Nav.Link> */}
-            </Nav>
-          </Offcanvas.Body>
-        </Navbar.Offcanvas>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
