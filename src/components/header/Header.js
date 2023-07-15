@@ -63,10 +63,6 @@ const Header = () => {
   //Toast
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState(false);
-
-  const handler = () => {
-    console.log("lcick");
-  };
   return (
     <Navbar expand="md" className="header" fixed="top" collapseOnSelect>
       <Container fluid>
