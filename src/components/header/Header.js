@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Offcanvas from "react-bootstrap/Offcanvas";
 import { Modal, Button, Form } from "react-bootstrap";
 //import assets
 import Logo from "../../assets/Images/logo.jpg";
@@ -70,7 +69,7 @@ const Header = () => {
           <img src={Logo} alt="temp" className="logo" onClick={handleShow} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
-        <Navbar.Collapse>
+        <Navbar.Collapse style={{ justifyContent: "end" }}>
           <Nav>
             <Nav.Link
               href="#Home"
