@@ -64,7 +64,7 @@ const Header = () => {
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState(false);
   return (
-    <Navbar expand="md" className="header" fixed="top">
+    <Navbar expand="md" className="header" fixed="top" collapseOnSelect>
       <Container fluid>
         <Navbar.Brand>
           <img src={Logo} alt="temp" className="logo" onClick={handleShow} />
