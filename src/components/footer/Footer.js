@@ -87,15 +87,15 @@ const Footer = () => {
             <div>
               <ul>
                 <img className="icon" src={location} alt="ico" />
-                Location
+                SR Hospital Near, Sakthimainroad, Soolai, ERODE-638004.
               </ul>
               <ul>
                 <img className="icon" src={phone} alt="ico" />
-                Phone
+                90254 30044
               </ul>
               <ul>
                 <img className="icon" src={email} alt="ico" />
-                Mail
+                raajk2297@gmail.com
               </ul>
             </div>
           </Col>
