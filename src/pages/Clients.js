@@ -13,11 +13,10 @@ import {
 //imports
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Add from "../assets/Images/circle-plus-solid.svg";
 import Edit from "../assets/Images/pen-to-square-solid.svg";
 import Delete from "../assets/Images/trash-solid.svg";
 //import firebase
-import { auth, db } from "../components/config/firebase";
+import { db } from "../components/config/firebase";
 import {
   getDocs,
   collection,
@@ -28,6 +27,9 @@ import {
 } from "firebase/firestore";
 import ClientsEditModal from "../components/ui/ClientsEditModal";
 import CustomToast from "../components/ui/CustomToast";
+//Lottie
+import AddCircle from "../assets/lottie/Flow 1.json";
+import Lottie from "lottie-react";
 
 const Clients = () => {
   //multiple carousal
@@ -142,6 +144,15 @@ const Clients = () => {
       console.log(err.message, " Update error");
     }
   };
+  //Lottie
+  const lottieRef = useRef();
+  const clientModalHandler = () => {
+    lottieRef.current.play();
+    setTimeout(() => {
+      lottieRef.current.pause();
+      handleShow();
+    }, 620);
+  };
 
   return (
     <div id="clients" className="content_begin">
@@ -190,11 +201,13 @@ const Clients = () => {
           })}
         </Carousel>
         <Row style={{ justifyContent: "end" }}>
-          {auth.currentUser ? (
-            <img className="add_icon" src={Add} alt="" onClick={handleShow} />
-          ) : (
-            <div style={{ height: "2em" }}></div>
-          )}
+          <Lottie
+            className="lottie_add"
+            animationData={AddCircle}
+            lottieRef={lottieRef}
+            autoplay={false}
+            onClick={clientModalHandler}
+          />
         </Row>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>

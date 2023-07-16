@@ -1,5 +1,5 @@
 //imports from react
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 //imports form bootstrap
 import { Row, Card, Container, Form } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
@@ -11,6 +11,9 @@ import Add from "../assets/Images/circle-plus-solid.svg";
 import { storage, auth } from "../components/config/firebase";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import CustomToast from "../components/ui/CustomToast";
+//Lottie
+import AddCircle from "../assets/lottie/Flow 1.json";
+import Lottie from "lottie-react";
 
 const Updates = () => {
   const [show, setShow] = useState(false);
@@ -82,7 +85,15 @@ const Updates = () => {
   //Toast
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState(false);
-
+  //Lottie
+  const lottieRef = useRef();
+  const clientModalHandler = () => {
+    lottieRef.current.play();
+    setTimeout(() => {
+      lottieRef.current.pause();
+      handleShow();
+    }, 620);
+  };
   return (
     <div id="updates" className="content_begin">
       <Container fluid>
@@ -105,7 +116,13 @@ const Updates = () => {
         </Carousel>
         <Row style={{ justifyContent: "end" }}>
           {auth.currentUser ? (
-            <img className="add_icon" src={Add} alt="" onClick={handleShow} />
+            <Lottie
+              className="lottie_add"
+              animationData={AddCircle}
+              lottieRef={lottieRef}
+              autoplay={false}
+              onClick={clientModalHandler}
+            />
           ) : (
             <div style={{ height: "2em" }}></div>
           )}
