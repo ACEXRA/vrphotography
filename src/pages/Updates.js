@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 //imports
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Add from "../assets/Images/circle-plus-solid.svg";
 import { storage, auth } from "../components/config/firebase";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import CustomToast from "../components/ui/CustomToast";

@@ -55,6 +55,8 @@ ul {
   justify-content: center;
   color: #ffc916;
   margin: 2rem 0;
+  font-weight: bolder;
+  font-size: 3em;
 }
 .profile_img {
   aspect-ratio: 4/5;

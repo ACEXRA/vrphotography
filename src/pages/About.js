@@ -25,15 +25,13 @@ const About = () => {
           <Col>
             <Row>
               <p className="font_theme1">
-                I'm <span className="sub_title">RajKumar,</span> a freelance
+                I'm <span className="sub_title">RajKumar,</span> a professional
                 photographer. My passion is taking photos of the most stunning
                 architecture around the world.
               </p>
               <p className="font_theme1">
                 I love to pause the wild, happy and real moments of life, just
-                to hear their stories untold. Viverra tristique usto duis vitae
-                diam neque nivamus estan ateuene artines viverra nec setlie no
-                curabit tristique.
+                to hear their stories untold.
               </p>
             </Row>
             <Row>
@@ -47,15 +45,15 @@ const About = () => {
                 </li>
                 <li className="font_theme1">
                   <img className="icon" src={arrow} alt="ico" />
-                  Manfrotto Compact Tripod
+                  Signal 85mm 1.4
                 </li>
                 <li className="font_theme1">
                   <img className="icon" src={arrow} alt="ico" />
-                  DJI Ronin MX 3-Axis Gimbal Stabilizer
+                  DJI Ronin S Gimbal Stabilizer
                 </li>
                 <li className="font_theme1">
                   <img className="icon" src={arrow} alt="ico" />
-                  Canon EF100-400MM Lens
+                  Canon 70-200 lens
                 </li>
                 <li className="font_theme1">
                   <img className="icon" src={arrow} alt="ico" />
@@ -64,14 +62,6 @@ const About = () => {
                 <li className="font_theme1">
                   <img className="icon" src={arrow} alt="ico" />
                   Nikon D5 24-70mm F2.8
-                </li>
-                <li className="font_theme1">
-                  <img className="icon" src={arrow} alt="ico" />
-                  Nikon Af-S 24Mm F/1.4G Ed Lens
-                </li>
-                <li className="font_theme1">
-                  <img className="icon" src={arrow} alt="ico" />
-                  Wondlan Sniper Sn 2.1 Wf Wireless Dslr Rig
                 </li>
               </ul>
             </Row>
