@@ -11,7 +11,7 @@ import Label from "../assets/Images/zlabel.jpeg";
 const Services = () => {
   return (
     <div id="services" className="content_begin">
-      <Container fluid>
+      <Container>
         <h4 className="title">Services</h4>
         <Row>
           <Col xl={4} md={6}>

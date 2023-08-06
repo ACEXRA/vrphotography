@@ -1,12 +1,12 @@
 import React from "react";
 //imports from bootstrap
-import Image from "react-bootstrap/Image";
+// import Image from "react-bootstrap/Image";
 import Carousel from "react-bootstrap/Carousel";
 //imports
-import Home1 from "../assets/Images/home/home_1.jpg";
-import Home2 from "../assets/Images/home/home_2.jpg";
-import Home3 from "../assets/Images/home/home_3.jpg";
-import Home4 from "../assets/Images/home/home_4.jpg";
+// import Home1 from "../assets/Images/home/home_1.jpg";
+// import Home2 from "../assets/Images/home/home_2.jpg";
+// import Home3 from "../assets/Images/home/home_3.jpg";
+// import Home4 from "../assets/Images/home/home_4.jpg";
 import { Container, Row } from "react-bootstrap";
 
 const Home = () => {
@@ -56,7 +56,7 @@ const Home = () => {
                     className="banner_btn"
                     style={{ marginLeft: "2.4rem" }}
                   >
-                    Contact
+                    <a href="#footer">Contact</a>
                   </button>
                 </div>
               </Row>
@@ -81,7 +81,7 @@ const Home = () => {
                     className="banner_btn"
                     style={{ marginLeft: "2.4rem" }}
                   >
-                    Contact
+                    <a href="#footer">Contact</a>
                   </button>
                 </div>
               </Row>
