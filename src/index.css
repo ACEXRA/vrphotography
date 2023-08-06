@@ -5,11 +5,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #111111 !important;
-  font-weight: 700 !important;
-  font-size: 1rem !important;
   font-style: italic;
 }
-
+html {
+  font-size: 10px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

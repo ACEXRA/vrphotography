@@ -15,6 +15,7 @@ const Header = () => {
   //sign in
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
   //modal
   const [show, setShow] = useState(false);
@@ -59,66 +60,80 @@ const Header = () => {
       console.log(err.message);
     }
   };
+  const scrollHandler = () => {
+    if (window.scrollY > 200) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  window.addEventListener("scroll", scrollHandler);
   //Toast
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState(false);
   return (
-    <Navbar expand="md" className="header" fixed="top" collapseOnSelect>
-      <Container fluid>
+    <Navbar
+      expand="md"
+      className={`header ${scrolled ? "scrolled" : ""}`}
+      fixed="top"
+      collapseOnSelect
+    >
+      <Container>
         <Navbar.Brand>
           <img src={Logo} alt="temp" className="logo" onClick={handleShow} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
         <Navbar.Collapse style={{ justifyContent: "end" }}>
           <Nav>
-            <Nav.Link
+            <a
               href="#Home"
               onClick={() => {
                 handleClickScroll("home");
               }}
             >
               <b>Home</b>
-            </Nav.Link>
-            <Nav.Link
+            </a>
+            <a
               href="#About"
               onClick={() => {
                 handleClickScroll("about");
               }}
             >
               <b>About</b>
-            </Nav.Link>
-            <Nav.Link
+            </a>
+            <a
               href="#Services"
               onClick={() => {
                 handleClickScroll("services");
               }}
             >
               <b>Services</b>
-            </Nav.Link>
-            <Nav.Link
+            </a>
+            <a
               href="#Work"
               onClick={() => {
                 handleClickScroll("works");
               }}
             >
               <b>Work</b>
-            </Nav.Link>
-            <Nav.Link
+            </a>
+            <a
               href="#Clients"
               onClick={() => {
                 handleClickScroll("clients");
               }}
             >
               <b>Happy Clients</b>
-            </Nav.Link>
-            <Nav.Link
+            </a>
+            <a
               href="#Updates"
               onClick={() => {
                 handleClickScroll("updates");
               }}
             >
               <b>Updates</b>
-            </Nav.Link>
+            </a>
             {/* <Nav.Link>
                 <img
                   src={User}

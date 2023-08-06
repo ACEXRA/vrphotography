@@ -1,3 +1,15 @@
+h1 {
+  font-size: 3.6rem !important;
+}
+h4 {
+  font-size: 2.4rem !important;
+}
+p {
+  font-size: 1.8rem !important;
+}
+a {
+  text-decoration: none !important;
+}
 .content_begin {
   padding: 80px 0 0 0;
 }
@@ -9,13 +21,59 @@
   }
 }
 .header {
-  background-color: #ffc916;
+  & a {
+    font-size: 1.8rem;
+    color: #ffc916;
+    display: flex;
+    align-items: center;
+  }
 }
-.navbar-expand-md .offcanvas .offcanvas-body {
-  justify-content: end;
+.header.scrolled {
+  background: #ffc916;
+  transition: background 0.25s ease-in;
+  & a {
+    color: #000000;
+  }
 }
-.offcanvas {
-  background-color: #ffc916 !important;
+
+.navbar-nav {
+  gap: 1.6rem;
+}
+.banner1 {
+  background: url("./assets/Images/home/home_1.jpg") center center / cover
+    no-repeat;
+  /* width: 192rem; */
+}
+.banner2 {
+  background: url("./assets/Images/home/home_2.jpg") center center / cover
+    no-repeat;
+  /* width: 192rem; */
+}
+.banner3 {
+  background: url("./assets/Images/home/home_3.jpg") center center / cover
+    no-repeat;
+  /* width: 192rem; */
+}
+.banner_item {
+  padding: 20rem 0;
+  color: #ffc916;
+}
+.banner_btn {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  background: transparent;
+  border: 3px solid #ffc916;
+  border-radius: 3rem;
+  color: #ffc916;
+  &:hover {
+    color: #000000;
+    background: #ffc916;
+    transition: 0.25s ease-in;
+  }
+  & a {
+    color: inherit !important;
+  }
 }
 .footer {
   background-color: #ffc916;
@@ -39,16 +97,18 @@ ul {
 }
 .home_image {
   aspect-ratio: 16/9;
-  margin: 80px 0 0 0;
   border-radius: 1rem;
 }
 @media screen and (max-width: 768px) {
   .home_image {
     height: auto !important;
   }
-}
-.about {
-  margin: 2rem 0 0 0;
+  .header {
+    background: #ffc916;
+    & a {
+      color: #000000;
+    }
+  }
 }
 .title {
   display: flex;

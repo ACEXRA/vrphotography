@@ -18,7 +18,7 @@ const Footer = () => {
   };
   return (
     <>
-      <Container className="footer" fluid>
+      <Container id="footer" className="footer" fluid>
         <Row>
           <Col md>
             <h5>About us</h5>

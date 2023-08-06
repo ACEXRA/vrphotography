@@ -9,9 +9,9 @@ import arrow from "../assets/Images/chevron-yellow.svg";
 const About = () => {
   return (
     <div id="about" className="content_begin">
-      <Container className="about">
+      <Container>
         <Row>
-          <h4 className="title">ABOUT US</h4>
+          <h1 className="title">ABOUT US</h1>
         </Row>
         <Row>
           <Col xl md={12}>
