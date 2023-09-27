@@ -6,13 +6,13 @@ const CustomToast = ({ message, setShow, show }) => {
     <ToastContainer
       style={{
         position: "fixed",
-        bottom: "100px",
-        right: "50px",
+        bottom: "5rem",
+        right: "5rem",
       }}
     >
       <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
         <Toast.Header style={{ background: "#ffc916" }}>
-          <strong className="me-auto">{message} successfully</strong>
+          <strong className="me-auto">{message}</strong>
         </Toast.Header>
       </Toast>
     </ToastContainer>

@@ -79,7 +79,8 @@ a {
 .icon {
   width: 1rem;
   height: 1rem;
-  margin: 0.5rem;
+  background-color: #ffc916;
+  border-radius: 1rem;
 }
 ul {
   padding: 0 !important;
@@ -156,6 +157,8 @@ ul {
   background-color: #000000 !important;
   color: #ffc916 !important;
   border: none !important;
+  padding: 1rem !important;
+  font-size: 1rem !important;
 }
 /* bootstrap modal css */
 .modal-content {
@@ -164,6 +167,9 @@ ul {
 .modal-header,
 .modal-footer {
   border: none !important;
+}
+.login_link {
+  cursor: pointer;
 }
 
 .icon_click {

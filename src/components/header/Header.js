@@ -8,9 +8,15 @@ import { Modal, Button, Form } from "react-bootstrap";
 //import assets
 import Logo from "../../assets/Images/logo.jpg";
 import CustomToast from "../ui/CustomToast";
+import User from "../../assets/Images/user-solid.svg";
 //firbase
 import { auth } from "../config/firebase";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  SignInMethod,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import SignInModal from "../ui/SignInModal";
 const Header = () => {
   //sign in
   const [username, setUsername] = useState("");
@@ -134,18 +140,19 @@ const Header = () => {
             >
               <b>Updates</b>
             </a>
-            {/* <Nav.Link>
-                <img
-                  src={User}
-                  className="icon"
-                  alt="user"
-                  onClick={handleShow}
-                />
-              </Nav.Link> */}
+            <Nav.Link>
+              <img
+                src={User}
+                className="icon"
+                style={{ height: "2rem", width: "2rem" }}
+                alt="user"
+                onClick={handleShow}
+              />
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <Modal show={show} onHide={handleClose}>
+      {/* <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Admin Login</Modal.Title>
         </Modal.Header>
@@ -182,7 +189,8 @@ const Header = () => {
             </Form>
           )}
         </Modal.Body>
-      </Modal>
+      </Modal> */}
+      <SignInModal show={show} setShow={setShow} handleClose={handleClose} />
       <CustomToast show={toast} setShow={setToast} message={message} />
     </Navbar>
   );
